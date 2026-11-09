@@ -8,7 +8,7 @@
 
 #ifdef _WIN32
 #include <windows.h>
-#else
+#elif defined(__linux__)
 #include <link.h>
 #include <unistd.h>
 #endif
@@ -54,7 +54,7 @@ namespace
             if (section->Characteristics & IMAGE_SCN_MEM_EXECUTE)
                 AddRange(base + section->VirtualAddress, RoundUpToPage(section->Misc.VirtualSize, system.dwPageSize));
     }
-#else
+#elif defined(__linux__)
     int AddMainProgramRanges(dl_phdr_info* info, size_t, void*)
     {
         size_t const page = size_t(sysconf(_SC_PAGESIZE));
@@ -74,6 +74,10 @@ namespace
     void FindCodeRanges()
     {
         dl_iterate_phdr(AddMainProgramRanges, nullptr);
+    }
+#else
+    void FindCodeRanges()
+    {
     }
 #endif
 
