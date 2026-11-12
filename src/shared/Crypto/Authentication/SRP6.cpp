@@ -114,7 +114,7 @@ bool SRP6::CalculateVerifier(const std::string& rI, const char* salt)
 
     Crypto::Hash::SHA1::Generator generator;
     generator.UpdateData(A);
-    generator.UpdateData(s);
+    generator.UpdateData(s.AsByteArray(32));
     generator.UpdateData(mDigest, SHA_DIGEST_LENGTH);
     auto sha1 = generator.GetDigest();
 

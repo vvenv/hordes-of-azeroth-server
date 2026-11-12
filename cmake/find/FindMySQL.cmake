@@ -27,8 +27,12 @@ if( UNIX )
       /usr/local/mysql/bin/
       /usr/local/bin/
       /usr/bin/
+      /opt/homebrew/opt/mariadb/bin/
+      /opt/homebrew/opt/mariadb-connector-c/bin/
       /opt/homebrew/opt/mysql-client/bin/
       /opt/homebrew/opt/mysql/bin/
+      /usr/local/opt/mariadb/bin/
+      /usr/local/opt/mariadb-connector-c/bin/
       /usr/local/opt/mysql-client/bin/
       /usr/local/opt/mysql/bin/
   )
@@ -81,10 +85,18 @@ find_path(MYSQL_INCLUDE_DIR
     /usr/local/include
     /usr/local/include/mysql
     /usr/local/mysql/include
+    /opt/homebrew/opt/mariadb/include/mysql
+    /opt/homebrew/opt/mariadb/include
+    /opt/homebrew/opt/mariadb-connector-c/include/mariadb
+    /opt/homebrew/opt/mariadb-connector-c/include
     /opt/homebrew/opt/mysql-client/include
     /opt/homebrew/opt/mysql-client/include/mysql
     /opt/homebrew/opt/mysql/include
     /opt/homebrew/opt/mysql/include/mysql
+    /usr/local/opt/mariadb/include/mysql
+    /usr/local/opt/mariadb/include
+    /usr/local/opt/mariadb-connector-c/include/mariadb
+    /usr/local/opt/mariadb-connector-c/include
     /usr/local/opt/mysql-client/include
     /usr/local/opt/mysql-client/include/mysql
     /usr/local/opt/mysql/include
@@ -114,10 +126,14 @@ foreach(LIB ${MYSQL_ADD_LIBRARIES})
       /usr/local/lib
       /usr/local/lib/mysql
       /usr/local/mysql/lib
+      /opt/homebrew/opt/mariadb/lib
+      /opt/homebrew/opt/mariadb-connector-c/lib
       /opt/homebrew/opt/mysql-client/lib
       /opt/homebrew/opt/mysql-client/lib/mysql
       /opt/homebrew/opt/mysql/lib
       /opt/homebrew/opt/mysql/lib/mysql
+      /usr/local/opt/mariadb/lib
+      /usr/local/opt/mariadb-connector-c/lib
       /usr/local/opt/mysql-client/lib
       /usr/local/opt/mysql-client/lib/mysql
       /usr/local/opt/mysql/lib

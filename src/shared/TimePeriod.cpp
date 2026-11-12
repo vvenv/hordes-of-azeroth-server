@@ -25,6 +25,12 @@
 ScopedTimerPeriod set_time_period(const std::chrono::milliseconds ms)
 {
 #ifdef _WIN32
+    PROCESS_POWER_THROTTLING_STATE throttling = {};
+    throttling.Version = PROCESS_POWER_THROTTLING_CURRENT_VERSION;
+    throttling.ControlMask = PROCESS_POWER_THROTTLING_IGNORE_TIMER_RESOLUTION;
+    throttling.StateMask = 0;
+    SetProcessInformation(GetCurrentProcess(), ProcessPowerThrottling, &throttling, sizeof(throttling));
+
     auto count = ms.count();
     const auto result = timeBeginPeriod(count);
 
