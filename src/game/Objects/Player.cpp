@@ -3120,8 +3120,8 @@ void Player::GiveLevel(uint32 level)
     // If we have instance members, and the number of players in the instance is not
     // equal to the number of group members, then the player is likely mob tagging
     // and dropping group. Or they are soloing a dungeon, which is questionable.
-    // Alert GMs
-    if (!!numInstanceMembers && numInstanceMembers > numGroupMembers)
+    // Alert GMs. Party bots level up as they spawn, while still joining the group.
+    if (!IsBot() && !!numInstanceMembers && numInstanceMembers > numGroupMembers)
     {
         std::stringstream message;
         message << GetGuidStr() << " levelup in dungeon with "

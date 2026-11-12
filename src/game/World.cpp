@@ -69,6 +69,7 @@
 #include "AuctionHouseBotMgr.h"
 #include "Transports/TransportMgr.h"
 #include "PlayerBotMgr.h"
+#include "DungeonBotMgr.h"
 #include "ZoneScriptMgr.h"
 #include "CharacterDatabaseCache.h"
 #include "CreatureGroups.h"
@@ -2129,6 +2130,7 @@ void World::Update(uint32 diff)
 
     // Update PlayerBotMgr
     sPlayerBotMgr.Update(diff);
+    sDungeonBotMgr.Update(diff);
     // Update AutoBroadcast
     sAutoBroadCastMgr.Update(diff);
     // Update ban list if necessary
