@@ -1284,6 +1284,12 @@ PerformanceLog.SlowPacketBroadcast = 0
 #    Motd
 #        Message of the Day. Displayed at world login for every user ('@' for a newline).
 #
+#    Motd.ShowPatch
+#        Add a second line naming the content patch ("Patch 1.12: Drums of War is now live!")
+#        to the message of the day.
+#        Default: 1 (add it)
+#                 0 (the message of the day alone)
+#
 ###################################################################################################################
 
 GameType = 1
@@ -1354,6 +1360,7 @@ BeepAtStart = 1
 ShowProgressBars = 0
 WaitAtStartupError = 5 # consider fixing your actual problem before changing this value!
 Motd = "Welcome to World of Warcraft!"
+Motd.ShowPatch = 1
 
 ###################################################################################################################
 # PLAYER INTERACTION
