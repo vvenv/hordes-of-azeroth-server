@@ -753,6 +753,7 @@ void World::LoadConfigSettings(bool reload)
 
     setConfig(CONFIG_BOOL_SILENTLY_GM_JOIN_TO_CHANNEL, "Channel.SilentlyGMJoin", false);
     setConfig(CONFIG_BOOL_STRICT_LATIN_IN_GENERAL_CHANNELS, "Channel.StrictLatinInGeneral", false);
+    setConfig(CONFIG_BOOL_CHANNEL_DISABLE, "Channel.Disable", false);
 
     setConfig(CONFIG_BOOL_CHAT_FAKE_MESSAGE_PREVENTING, "ChatFakeMessagePreventing", true);
 

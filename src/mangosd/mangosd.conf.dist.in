@@ -1609,6 +1609,12 @@ GuidReserveSize.GameObject = 1000
 #        Default: 0 (disable)
 #                 1 (enable)
 #
+#    Channel.Disable
+#        Ignore every request to join a chat channel (General, Trade, LocalDefense,
+#        LookingForGroup and custom ones), for single-player realms.
+#        Default: 0 (channels work)
+#                 1 (nobody joins any channel)
+#
 #    WorldChan.MinLevel
 #        Minimum level to use world channels
 #        Default: 1
@@ -1667,6 +1673,7 @@ ChatFlood.MessageDelay = 1
 ChatFlood.MuteTime = 10
 Channel.SilentlyGMJoin = 0
 Channel.StrictLatinInGeneral = 0
+Channel.Disable = 0
 WorldChan.MinLevel = 1
 WorldChan.Cooldown = 0
 WorldChan.CooldownMaxLevel = 0

@@ -26,6 +26,10 @@
 
 void WorldSession::HandleJoinChannelOpcode(WorldPackets::Channel::JoinChannel const& packet)
 {
+    // Single-player realms: no channels at all, and nothing to tell the client.
+    if (sWorld.getConfig(CONFIG_BOOL_CHANNEL_DISABLE))
+        return;
+
     // Channel name must begin with a letter.
     if (packet.channelName.empty() || (uint8(packet.channelName[0]) <= 127 && !isalpha(packet.channelName[0])))
     {
